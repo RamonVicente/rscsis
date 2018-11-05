@@ -4,6 +4,7 @@ package controller;
 import bd.UsuarioBD;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -48,7 +49,7 @@ public class CadastroUsuario extends HttpServlet {
             throws ServletException, IOException {
        
         HttpSession session = request.getSession();
-        
+        session.removeAttribute("cadastrado");
         Usuario usuario = new Usuario();
         UsuarioBD usuarioBD = new UsuarioBD();
         
@@ -71,6 +72,12 @@ public class CadastroUsuario extends HttpServlet {
         }          
               
         usuarioBD.create(usuario);
+        
+         if(usuario != null){
+        request.setAttribute("cadastrado","Usuário Cadastrado com sucesso!");    
+        RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/cadastro.jsp");
+        rd.forward(request, response);
+        }
     }
 
    

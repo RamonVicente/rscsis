@@ -41,7 +41,9 @@
 
                         <h1>RSCSIS</h1>
                         <div class="container">
+                             <small style="color:green">${cadastrado}</small>
                             <form method="post" action="CadastroUsuario">
+                               
                                 <h2>Cadastre-se</h2>
                                 <label>Nome:</label><br>
                                 <input type="text" name="nome"><br>
