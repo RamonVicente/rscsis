@@ -1,7 +1,6 @@
 
 package model;
 
-import rscsis.Usuario;
 /**
  *
  * @author Rafael

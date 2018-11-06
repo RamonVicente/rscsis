@@ -29,7 +29,6 @@
         <link href="https://colorlib.com/polygon/build/css/custom.min.css" rel="stylesheet">
     </head>
 
-    <body>
     <body class="login">
         <div>
             <a class="hiddenanchor" id="signup"></a>
