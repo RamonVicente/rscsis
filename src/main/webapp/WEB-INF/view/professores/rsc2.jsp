@@ -36,7 +36,7 @@
        <td><input type="number" name="orientacao_tutoria_supervisao_4"></td>
      </tr>
     </table>
-    <input type="hidden" name="id_usuario" value="3">
+    <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}"/>">
     <button type="submit">Cadastrar</button>
 </form>
 <c:import url="WEB-INF/view/footer.jsp" />

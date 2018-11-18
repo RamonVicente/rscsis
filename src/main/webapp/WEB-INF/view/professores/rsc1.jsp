@@ -44,7 +44,7 @@
        <td><input type="number" name="atividade_organizacao_social"></td>
      </tr>
     </table>
-    <input type="hidden" name="id_usuario" value="2">
+    <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}" />">
     <button type="submit">Cadastrar</button>
 </form>
 <c:import url="WEB-INF/view/footer.jsp" />

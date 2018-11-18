@@ -28,7 +28,7 @@
        <td><input type="number" name="elaboracao_documentos_tecnicos"></td>
      </tr>
     </table>
-    <input type="hidden" name="id_usuario" value="1">
+    <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}"/>">
     <button type="submit">Cadastrar</button>
 </form>
 <c:import url="WEB-INF/view/footer.jsp" />

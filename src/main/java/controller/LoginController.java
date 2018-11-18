@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package controller;
 
+import bd.UsuarioBD;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -13,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.LoginManager;
+import model.TipoUsuario;
+import model.Usuario;
 
 /**
  *
@@ -21,47 +19,24 @@ import model.LoginManager;
  */
 public class LoginController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+   
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+ 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try (PrintWriter out = response.getWriter()) {
+        /*try (PrintWriter out = response.getWriter()) {
             HttpSession session = request.getSession(false);
+            UsuarioBD userBd = new UsuarioBD();
             String login = request.getParameter("login");
             String senha = request.getParameter("senha");
+           
             LoginManager loginManager = new LoginManager();
             String result = loginManager.autenticador(login, senha);
             //Object usuario = new Date();
@@ -81,8 +56,58 @@ public class LoginController extends HttpServlet {
 
             }
 
+        }*/
+        UsuarioBD u = new UsuarioBD();  
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        HttpSession session = request.getSession();
+        session.removeAttribute("falhalogin");
+            
+        for (Usuario user : u.findUsuarioEntities()) {
+                
+            if(user.getLogin().equals(login) && user.getSenha().equals(senha)) {
+                    
+                session.setAttribute("usuario", user);
+                    
+                if (user.getTipo() != null){
+                   
+                    switch (user.getTipo()) {
+                        case PROFESSOR:
+                            {
+                                RequestDispatcher rd = request.getRequestDispatcher("professor-home");
+                                rd.forward(request, response);
+                                System.out.println("carregou aqui!");
+                                break;
+                            }
+                        case COMISSAOPERMANENTE:
+                            {
+                                RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/");
+                                rd.forward(request, response); 
+                                break;
+                            }
+                        case COMISSAOESPECIAL:
+                            {
+                                RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/");
+                                rd.forward(request, response);
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                   
+                 
+              
+                }
+            }
         }
+        if (session.getAttribute("usuario") == null) {
+                    
+                   session.setAttribute("falhalogin", "Falha ao Efetuar Login!");
+                   RequestDispatcher rd = request.getRequestDispatcher("Login");
+                   rd.forward(request, response);
+              }
     }
+           
 
     /**
      * Returns a short description of the servlet.
