@@ -1,26 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package bd;
 
 import java.io.Serializable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import model.Usuario;
+import model.RSC1;
 
 /**
  *
- * @author valeria
+ * @author ramon
  */
-
-public class UsuarioBD implements Serializable{
+public class RSC1_DB implements Serializable{
     
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("rscsis");
     EntityManager em = emf.createEntityManager();;
     
-    public void create(Usuario usuario) {
+    public void create(RSC1 rsc1) {
         
         try {
             em.getTransaction().begin();
-            em.persist(usuario);
+            em.persist(rsc1);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -28,9 +32,4 @@ public class UsuarioBD implements Serializable{
             }
         }
     }
-    
-    public Usuario find(Long id){
-        return em.find(Usuario.class, id);
-    }
-    
 }

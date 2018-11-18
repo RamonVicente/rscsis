@@ -25,6 +25,7 @@
              <input type="password" name="senha"><br><br>
              <input type="submit" class=" btn btn-primary" value="Entrar">
         </form>
+                  <a href="professor-home">ir para professor</a>
         </div>
 
               <div class="clearfix"></div>

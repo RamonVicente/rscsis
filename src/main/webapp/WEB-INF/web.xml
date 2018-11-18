@@ -4,7 +4,18 @@
         <servlet-name>LoginController</servlet-name>
         <servlet-class>Controllers.LoginController</servlet-class>
     </servlet>
-    
+    <servlet>
+        <servlet-name>RSC1</servlet-name>
+        <servlet-class>controller.RSC1_Controller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RSC2</servlet-name>
+        <servlet-class>controller.RSC2_Controller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RSC3</servlet-name>
+        <servlet-class>controller.RSC3_Controller</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -33,10 +44,53 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
-    
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
+    <servlet>
+        <servlet-name>professor-home</servlet-name>
+        <jsp-file>/WEB-INF/view/professores/home.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>professor-home</servlet-name>
+        <url-pattern>/professor-home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RSC1</servlet-name>
+        <url-pattern>/RSC1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rsc1</servlet-name>
+        <jsp-file>/WEB-INF/view/professores/rsc1.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rsc1</servlet-name>
+        <url-pattern>/rsc1</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rsc2</servlet-name>
+        <jsp-file>/WEB-INF/view/professores/rsc2.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rsc2</servlet-name>
+        <url-pattern>/rsc2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RSC2</servlet-name>
+        <url-pattern>/RSC2</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rsc3</servlet-name>
+        <jsp-file>/WEB-INF/view/professores/rsc3.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rsc3</servlet-name>
+        <url-pattern>/rsc3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RSC3</servlet-name>
+        <url-pattern>/RSC3</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
