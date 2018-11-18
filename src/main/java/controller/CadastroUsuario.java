@@ -75,7 +75,7 @@ public class CadastroUsuario extends HttpServlet {
         
          if(usuario != null){
         request.setAttribute("cadastrado","Usuário Cadastrado com sucesso!");    
-        RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/cadastro.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("Cadastro");
         rd.forward(request, response);
         }
     }

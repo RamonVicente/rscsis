@@ -74,7 +74,8 @@ public class LoginController extends HttpServlet {
                     switch (user.getTipo()) {
                         case PROFESSOR:
                             {
-                                RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/cadastro.jsp");
+
+                                RequestDispatcher rd = request.getRequestDispatcher("professor-home");
                                 rd.forward(request, response);
                                 break;
                             }
@@ -102,7 +103,7 @@ public class LoginController extends HttpServlet {
         if (session.getAttribute("usuario") == null) {
                     
                    session.setAttribute("falhalogin", "Falha ao Efetuar Login!");
-                   RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/view/login.jsp");
+                   RequestDispatcher rd = request.getRequestDispatcher("Login");
                    rd.forward(request, response);
               }
     }

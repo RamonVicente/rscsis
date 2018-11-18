@@ -2,16 +2,20 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -37,6 +41,18 @@ public class Usuario implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name="CL_TIPO_USUARIO")
     private TipoUsuario tipo;
+    
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.PERSIST,
+        targetEntity = RSC1.class, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<RSC1> rsc1Lista;
+    
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.PERSIST,
+        targetEntity = RSC2.class, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<RSC2> rsc2Lista;
+    
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.PERSIST,
+        targetEntity = RSC3.class, orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<RSC3> rsc3Lista;
 
     public Long getId() {
         return id;
@@ -85,6 +101,32 @@ public class Usuario implements Serializable {
     public void setTipo(TipoUsuario tipo) {
         this.tipo = tipo;
     }
+
+    public List<RSC1> getRsc1Lista() {
+        return rsc1Lista;
+    }
+
+    public void setRsc1Lista(List<RSC1> rsc1Lista) {
+        this.rsc1Lista = rsc1Lista;
+    }
+
+    public List<RSC2> getRsc2Lista() {
+        return rsc2Lista;
+    }
+
+    public void setRsc2Lista(List<RSC2> rsc2Lista) {
+        this.rsc2Lista = rsc2Lista;
+    }
+
+    public List<RSC3> getRsc3Lista() {
+        return rsc3Lista;
+    }
+
+    public void setRsc3Lista(List<RSC3> rsc3Lista) {
+        this.rsc3Lista = rsc3Lista;
+    }
+    
+    
 
     @Override
     public int hashCode() {
