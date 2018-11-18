@@ -5,7 +5,7 @@
 --%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:import url="WEB-INF/view/head.jsp" />
+<c:import url="head.jsp" />
         <div>
             <a class="hiddenanchor" id="signup"></a>
             <a class="hiddenanchor" id="signin"></a>
@@ -52,5 +52,5 @@
             </div>
         </div>
 
-<c:import url="WEB-INF/view/footer.jsp" />
+<c:import url="footer.jsp" />
 

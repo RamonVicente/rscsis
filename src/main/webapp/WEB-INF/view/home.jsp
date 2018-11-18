@@ -17,4 +17,4 @@
     </section>
   
 
-<c:import url="WEB-INF/view/footer.jsp" />
+<c:import url="footer.jsp" />
