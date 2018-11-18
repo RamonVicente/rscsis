@@ -74,9 +74,9 @@ public class LoginController extends HttpServlet {
                     switch (user.getTipo()) {
                         case PROFESSOR:
                             {
+
                                 RequestDispatcher rd = request.getRequestDispatcher("professor-home");
                                 rd.forward(request, response);
-                                System.out.println("carregou aqui!");
                                 break;
                             }
                         case COMISSAOPERMANENTE:

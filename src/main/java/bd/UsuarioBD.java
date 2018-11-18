@@ -31,11 +31,11 @@ public class UsuarioBD implements Serializable{
             }
         }
     }
-    
+  
     public Usuario find(Long id){
         return em.find(Usuario.class, id);
     }
-    
+  
     public List<Usuario> findUsuarioEntities() {
         return findUsuarioEntities(true, -1, -1);
     }
@@ -59,5 +59,4 @@ public class UsuarioBD implements Serializable{
             em.close();
         }
     }
-    
 }

@@ -1,8 +1,9 @@
 <%-- 
-    Document   : login
-    Created on : 01/11/2018, 14:49:19
-    Author     : Rafael
+    Document   : Login
+    Created on : 16/11/2018, 16:04:12
+    Author     : Marcelo
 --%>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:import url="WEB-INF/view/head.jsp" />
 <br><br><br><br>
@@ -24,7 +25,5 @@
         <br>
     </form>
 </div>
-  
+ 
 <c:import url="WEB-INF/view/footer.jsp" />
-
-
