@@ -52,12 +52,18 @@
                     </li>
                   </c:when>
                   <c:when test="${usuario != null}">
+                   
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"></span> ${usuario.nome}</a>
+                    </li> 
                     <li class="nav-item">
                       <a class="nav-link" href="professor-home">Inicio</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="LogoutServlet" id="linksair"> Sair </a>
                     </li>
+                    
+
                   </c:when>
               </c:choose>
           </ul>

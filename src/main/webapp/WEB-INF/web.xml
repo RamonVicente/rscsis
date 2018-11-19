@@ -16,6 +16,10 @@
         <servlet-name>RSC3</servlet-name>
         <servlet-class>controller.RSC3_Controller</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -90,6 +94,10 @@
     <servlet-mapping>
         <servlet-name>RSC3</servlet-name>
         <url-pattern>/RSC3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
