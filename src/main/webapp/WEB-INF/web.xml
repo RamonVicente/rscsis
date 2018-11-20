@@ -59,6 +59,14 @@
         <servlet-name>professor-home</servlet-name>
         <url-pattern>/professor-home</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ComissaoPermanente-home</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoPermanente/home.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ComissaoPermanente-home</servlet-name>
+        <url-pattern>/ComissaoPermanente-home</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RSC1</servlet-name>
         <url-pattern>/RSC1</url-pattern>
@@ -83,18 +91,46 @@
         <servlet-name>RSC2</servlet-name>
         <url-pattern>/RSC2</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>rsc3</servlet-name>
+        <url-pattern>/rsc3</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>rsc3</servlet-name>
         <jsp-file>/WEB-INF/view/professores/rsc3.jsp</jsp-file>
     </servlet>
     <servlet-mapping>
-        <servlet-name>rsc3</servlet-name>
-        <url-pattern>/rsc3</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>RSC3</servlet-name>
         <url-pattern>/RSC3</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>rsc1_cp</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoPermanente/rsc1_cp.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rsc1_cp</servlet-name>
+        <url-pattern>/rsc1_cp</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rsc2_cp</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoPermanente/rsc2_cp.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rsc2_cp</servlet-name>
+        <url-pattern>/rsc2_cp</url-pattern>
+    </servlet-mapping>
+  
+    <servlet>
+        <servlet-name>rsc3_cp</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoPermanente/rsc3_cp.jsp</jsp-file>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>rsc3_cp</servlet-name>
+        <url-pattern>/rsc3_cp</url-pattern>
+    </servlet-mapping>
+    
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>

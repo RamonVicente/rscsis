@@ -55,9 +55,17 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">${usuario.nome}</a>
                                 </li>
+                                <c:if test="${usuario.tipo == 'PROFESSOR'}">
                                 <li class="nav-item">
                                     <a class="nav-link" href="professor-home">Inicio</a>
                                 </li>
+                                </c:if>
+                                <c:if test="${usuario.tipo == 'COMISSAOPERMANENTE'}">
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="ComissaoPermanente-home">Inicio</a>
+                                    </li>
+                                </c:if>
+                                   
                                 <li class="nav-item">
                                     <a class="nav-link" href="LogoutServlet">Sair</a>
                                 </li>

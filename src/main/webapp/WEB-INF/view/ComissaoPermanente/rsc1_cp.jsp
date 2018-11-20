@@ -19,31 +19,31 @@
                 </tr>
                 <tr>
                     <td>Gestao Escolar (Direção, Assistente de Direção, Gerente, Chefe)</td>
-                    <td><input type="number" name="gestao_escolar_1"></td>
+                    <td><input type="file" name="gestao_escolar_1"></td>
                 </tr>
                 <tr>
                     <td>Gestao Escolar (Supervisao, Superviao de estadio)</td>
-                    <td><input type="number" name="gestao_escolar_2"></td>
+                    <td><input type="file" name="gestao_escolar_2"></td>
                 </tr>
                 <tr>
                     <td>Exercício de Magistério ou tutoria</td>
-                    <td><input type="number" name="exercicio_magisterio_ou_tutoria"></td>
+                    <td><input type="file" name="exercicio_magisterio_ou_tutoria"></td>
                 </tr>
                 <tr>
                     <td>Gestao no setor Público ou Pivado</td>
-                    <td><input type="number" name="gestao_publico_privado"></td>
+                    <td><input type="file" name="gestao_publico_privado"></td>
                 </tr>
                 <tr>
                     <td>Experiência na área de atuacao (tecnic, superior)</td>
-                    <td><input type="number" name="experiencia_atuacao_ou_formacao"></td>
+                    <td><input type="file" name="experiencia_atuacao_ou_formacao"></td>
                 </tr>
                 <tr>
                     <td>Participação em colegiado ou Conselhos</td>
-                    <td><input type="number" name="participacao_colegiado_conselhos"></td>
+                    <td><input type="file" name="participacao_colegiado_conselhos"></td>
                 </tr>
                 <tr>
                     <td>Atividade em Organizações sociais</td>
-                    <td><input type="number" name="atividade_organizacao_social"></td>
+                    <td><input type="file" name="atividade_organizacao_social"></td>
                 </tr>
             </table>
             <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}" />">

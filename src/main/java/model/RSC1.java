@@ -37,7 +37,7 @@ public class RSC1 implements Serializable {
     private int participacao_colegiado_conselhos;
     private int atividade_organizacao_social;
    
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE, optional = false)
     @JoinColumn(name = "ID_USUARIO", referencedColumnName = "ID_USUARIO", nullable = false)
     private Usuario usuario;
 
