@@ -87,7 +87,7 @@ public class LoginController extends HttpServlet {
                             }
                         case COMISSAOESPECIAL:
                             {
-                                RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/");
+                                RequestDispatcher rd = request.getRequestDispatcher("ComissaoEspecial-home");
                                 rd.forward(request, response);
                                 break;
                             }
