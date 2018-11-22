@@ -131,6 +131,45 @@
         <url-pattern>/rsc3_cp</url-pattern>
     </servlet-mapping>
     
+    <!---->
+    
+     <servlet>
+        <servlet-name>ComissaoEspecial-home</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoEspecial/home.jsp</jsp-file>
+    </servlet>
+        <servlet-mapping>
+        <servlet-name>ComissaoEspecial-home</servlet-name>
+        <url-pattern>/ComissaoEspecial-home</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rsc1_ce</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoEspecial/rsc1_ce.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rsc1_ce</servlet-name>
+        <url-pattern>/rsc1_ce</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rsc2_ce</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoEspecial/rsc2_ce.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>rsc2_ce</servlet-name>
+        <url-pattern>/rsc2_ce</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>rsc3_cp</servlet-name>
+        <jsp-file>/WEB-INF/view/ComissaoEspecial/rsc3_cp.jsp</jsp-file>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>rsc3_ce</servlet-name>
+        <url-pattern>/rsc3_ce</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!---->
+    
+    
     <servlet-mapping>
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
