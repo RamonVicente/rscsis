@@ -1,4 +1,4 @@
-/*
+
 package teste;
 
 import java.util.HashMap;
@@ -12,7 +12,7 @@ import org.junit.Test;
 import model.TipoUsuario;
 import model.Usuario;
 
-
+/*
 public class TesteUsuarioCrud extends TesteBase {
  
     @Test
@@ -62,5 +62,4 @@ public class TesteUsuarioCrud extends TesteBase {
         assertNull(deletado);
     }
     
-}
-*/
+}*/

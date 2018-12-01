@@ -52,7 +52,7 @@
                     <td><input type="number" name="orientacao_tutoria_supervisao_4" ></td>
                 </tr>
             </table>
-            <input type="hidden" name="id_usuario" readonly="<c:out readonly="${usuario.id}"/>">
+            <input type="hidden" name="id_usuario" readonly="<c:out value="${usuario.id}"/>">
             <button type="submit">Cadastrar</button>
         </form>
     </div>

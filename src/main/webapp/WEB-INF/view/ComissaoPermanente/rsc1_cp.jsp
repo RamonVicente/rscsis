@@ -9,6 +9,7 @@
 <br><br><br><br>
 <div class="container" style=" border: 8px double; width:50%">
     <div class="container-fluid"> 
+        <h2> Siape sendo editado ${siapeSendoEditado} nome: ${SiapeUser.nome}</h2><p>
         <h2>PREENCHA O FORMULÁRIO RSC1:</h2>
         <small style="color:green">${cadastrado}</small>
         <form action="RSC1" method="POST">

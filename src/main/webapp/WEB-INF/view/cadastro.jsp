@@ -8,10 +8,12 @@
 <c:import url="WEB-INF/view/head.jsp" />
 
 <h1>RSCSIS</h1>
-<small style="color:green">${cadastrado}</small>
-<div class="container" style=" border: 8px double; width:50%" >
-    <div class="container-fluid">  
 
+<div class="container" style=" border: 8px double; width:50%" >
+
+    <div class="container-fluid">  
+        <small style="color:green">${cadastrado}</small>
+         <small style="color:green">${jaExisteUsuario}</small>
         <form method="post" action="CadastroUsuario">
 
             <h3>Cadastre-se</h3>

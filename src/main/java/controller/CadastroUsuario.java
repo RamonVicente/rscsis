@@ -69,10 +69,17 @@ public class CadastroUsuario extends HttpServlet {
             usuario.setTipo(TipoUsuario.COMISSAOPERMANENTE);
         }else if("especial".equals(tipoUser)){
             usuario.setTipo(TipoUsuario.COMISSAOESPECIAL);
-        }          
-              
+        }
+        Usuario user =usuarioBD.getSiape(matricula);
+        if(user !=null){
+            if(usuario != null){
+            request.setAttribute("jaExisteUsuario","Usuario com este siape já esta cadastrado!");    
+            RequestDispatcher rd = request.getRequestDispatcher("Cadastro");
+            rd.forward(request, response);
+            }
+        }else{
         usuarioBD.create(usuario);
-        
+        }      
          if(usuario != null){
         request.setAttribute("cadastrado","Usuário Cadastrado com sucesso!");    
         RequestDispatcher rd = request.getRequestDispatcher("Cadastro");
