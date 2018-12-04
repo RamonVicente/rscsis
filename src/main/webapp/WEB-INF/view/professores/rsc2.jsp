@@ -19,27 +19,30 @@
                 </tr>
                 <tr>
                     <td>Orientação ou Coorientação de trabalho de conclusão de curso</td>
-                    <td><input type="number" name="orientacao_cooerientacao_tcc"></td>
+                    <td><input type="number" name="orientacao_cooerientacao_tcc" value ="0"></td>
                 </tr>
                 <tr>
                     <td>Orientacao, tutoria, supervisão ou acompanhamento de atividade de ensino</td>
-                    <td><input type="number" name="orientacao_tutoria_supervisao_1"></td>
+                    <td><input type="number" name="orientacao_tutoria_supervisao_1" value ="0"></td>
                 </tr>
                 <tr>
                     <td>Orientacao, tutoria, supervisão ou acompanhamento de atividade de pesqusia ou extensão</td>
-                    <td><input type="number" name="orientacao_tutoria_supervisao_2"></td>
+                    <td><input type="number" name="orientacao_tutoria_supervisao_2" value ="0"></td>
                 </tr>
                 <tr>
                     <td>Orientação ou Coorientação de estagios curriculares</td>
-                    <td><input type="number" name="orientacao_tutoria_supervisao_3"></td>
+                    <td><input type="number" name="orientacao_tutoria_supervisao_3" value ="0"></td>
                 </tr>
                 <tr>
                     <td>Orientação ou Coorientação de educandos em atividade de ensino</td>
-                    <td><input type="number" name="orientacao_tutoria_supervisao_4"></td>
+                    <td><input type="number" name="orientacao_tutoria_supervisao_4" value ="0"></td>
                 </tr>
             </table>
             <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}"/>">
-            <button type="submit">Cadastrar</button>
+            <button type="submit" id="Cadastrar" class="btn btn-default">Cadastrar</button>
+            <a href="rsc1" class="btn btn-default">RSC1</a>
+            <a href="rsc2" class="btn btn-default">RSC2</a>
+            <a href="rsc3" class="btn btn-default">RSC3</a> 
         </form>
     </div>
 </div>
