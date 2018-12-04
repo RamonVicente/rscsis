@@ -24,6 +24,10 @@
         <servlet-name>BuscarSiapeUSuario</servlet-name>
         <servlet-class>controller.BuscarSiapeUSuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UploadFile</servlet-name>
+        <servlet-class>controller.UploadFile</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
         <url-pattern>/LoginController</url-pattern>
@@ -177,11 +181,14 @@
         <servlet-name>BuscarSiapeUSuario</servlet-name>
         <url-pattern>/BuscarSiapeUSuario</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadFile</servlet-name>
+        <url-pattern>/UploadFile</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
-   
     </session-config>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>

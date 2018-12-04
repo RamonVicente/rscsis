@@ -117,10 +117,11 @@ public class UploadFile extends HttpServlet {
             }
             
             //cadastrar no banco
-            Long usuario_id = Long.parseLong(request.getParameter("id_usuario"));
+            String usuario_id = request.getParameter("id_usuario");
             RSC1_DB rsc1DB  = new RSC1_DB();
             
-            writer.println("New file " + fileName + " created at " + path);
+            RSC1 rsc1 = rsc1DB.findByUsuarioId(usuario_id);
+            writer.println("New file " + fileName + " created at " + path + " "+ rsc1.getGestao_escolar_1());
            
 
         } catch (FileNotFoundException fne) {

@@ -8,9 +8,11 @@ package bd;
 import java.io.Serializable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import model.RSC1;
+import model.Usuario;
 
 /**
  *
@@ -34,8 +36,16 @@ public class RSC1_DB implements Serializable{
         }
     }
     
-    public RSC1 findByUsuarioId(Long usuario_id){
-        Query sql = em.createNativeQuery("SELECT * FROM TB_RSC1 WHERE ID_USUARIO="+ usuario_id, RSC1.class);
-        return (RSC1) sql.getSingleResult();
+    public RSC1 findByUsuarioId(String usuario_id){
+        String jpql = "SELECT r FROM RSC1 r where r.ID_USUARIO = ?1";
+        Query query = em.createQuery(jpql);
+        query.setParameter(1, usuario_id);
+        try {
+            RSC1 rsc1 = (RSC1) query.getSingleResult();
+
+            return rsc1;
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 }
