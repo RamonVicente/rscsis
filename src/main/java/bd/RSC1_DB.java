@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import model.RSC1;
 
 /**
@@ -31,5 +32,10 @@ public class RSC1_DB implements Serializable{
                 em.close();
             }
         }
+    }
+    
+    public RSC1 findByUsuarioId(Long usuario_id){
+        Query sql = em.createNativeQuery("SELECT * FROM TB_RSC1 WHERE ID_USUARIO="+ usuario_id, RSC1.class);
+        return (RSC1) sql.getSingleResult();
     }
 }

@@ -5,6 +5,7 @@
  */
 package controller;
 
+import bd.RSC1_DB;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -28,6 +29,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import model.RSC1;
 
 /**
  *
@@ -115,10 +117,10 @@ public class UploadFile extends HttpServlet {
             }
             
             //cadastrar no banco
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("rscsis");
-            EntityManager em = emf.createEntityManager();
-            Query sql = em.createNativeQuery("SELECT * FROM RSC1 r WHERE ID_USUARIO=: ");
-            //writer.println("New file " + fileName + " created at " + path);
+            Long usuario_id = Long.parseLong(request.getParameter("id_usuario"));
+            RSC1_DB rsc1DB  = new RSC1_DB();
+            
+            writer.println("New file " + fileName + " created at " + path);
            
 
         } catch (FileNotFoundException fne) {
