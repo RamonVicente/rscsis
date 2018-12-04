@@ -13,7 +13,7 @@
         <h2> Siape sendo editado ${siapeSendoEditado} nome: ${SiapeUser.nome}</h2><p>
         <h2>PREENCHA O FORMULÁRIO RSC2:</h2>
         <small style="color:green">${cadastrado}</small>
-        <form action="RSC3" method="POST">
+        <form action="UploadFile" method="POST" enctype="multipart/form-data">
             <table style="width:100%">
                 <tr>
                     <th>CRITÉRIOS</th>
