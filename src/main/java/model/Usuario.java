@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -53,6 +54,10 @@ public class Usuario implements Serializable {
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.PERSIST,
         targetEntity = RSC3.class, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<RSC3> rsc3Lista;
+    
+    @OneToOne(mappedBy = "usuario", targetEntity = UploadFileRSC1.class, orphanRemoval = true, 
+            fetch = FetchType.LAZY, optional = false)
+    private UploadFileRSC1 rsc1;
 
     public Long getId() {
         return id;

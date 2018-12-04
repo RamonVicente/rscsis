@@ -6,6 +6,7 @@
 package controller;
 
 import bd.RSC1_DB;
+import bd.UsuarioBD;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -15,6 +16,8 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,6 +33,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import model.RSC1;
+import model.UploadFileRSC1;
+import model.Usuario;
 
 /**
  *
@@ -97,8 +102,68 @@ public class UploadFile extends HttpServlet {
         
          // Cria um caminho para salvar o arquivo. Renomeia com o caminho do projeto
         String path = "/home/ramon/Documentos/College/Ageis/rscsis/src/main/resources/docs";
-        Part filePart = request.getPart("gestao_escolar_1");
-        String fileName = getFileName(filePart); 
+        Part filePart1 = request.getPart("gestao_escolar_1");
+        Part filePart2 = request.getPart("gestao_escolar_2");
+        Part filePart3 = request.getPart("exercicio_magisterio_ou_tutoria");
+        Part filePart4 = request.getPart("gestao_publico_privado");
+        Part filePart5 = request.getPart("experiencia_atuacao_ou_formacao");
+        Part filePart6 = request.getPart("participacao_colegiado_conselhos");
+        Part filePart7 = request.getPart("atividade_organizacao_social");
+        
+        List <Part> listPart = new ArrayList<>();
+        if(filePart1 != null)
+            listPart.add(filePart1);
+        if(filePart2 != null)
+            listPart.add(filePart2);
+        if(filePart3 != null)
+            listPart.add(filePart3);
+        if(filePart4 != null)
+            listPart.add(filePart4);
+        if(filePart5 != null)
+            listPart.add(filePart5);
+        if(filePart6 != null)
+            listPart.add(filePart6);
+        if(filePart7 != null)
+            listPart.add(filePart7);
+        
+        for(Part arquivo : listPart){
+                addFiles(arquivo, path, response);
+        }
+        
+        //cadastrar no banco
+            RSC1_DB rsc1DB  = new RSC1_DB();
+            UploadFileRSC1 rsc1File = new UploadFileRSC1();
+            UsuarioBD usuarioBD = new UsuarioBD();
+            Usuario usuario = usuarioBD.find(Long.parseLong(request.getParameter("id_usuario")));
+
+            rsc1File.setGestao_escolar_1(getFileName(filePart1));
+            rsc1File.setGestao_escolar_2(getFileName(filePart2));
+            rsc1File.setExercicio_magisterio_ou_tutoria(getFileName(filePart3));
+            rsc1File.setGestao_publico_privado(getFileName(filePart4));
+            rsc1File.setExperiencia_atuacao_ou_formacao(getFileName(filePart5));
+            rsc1File.setParticipacao_colegiado_conselhos(getFileName(filePart6));
+            rsc1File.setAtividade_organizacao_social(getFileName(filePart7));
+            rsc1File.setUsuario(usuario);
+            
+            rsc1DB.createFile(rsc1File);
+        
+    }
+
+    private String getFileName(Part part) {
+        String partHeader = part.getHeader("content-disposition");
+        
+        for (String content : part.getHeader("content-disposition").split(";")) {
+            if (content.trim().startsWith("filename")) {
+                return content.substring(
+                        content.indexOf('=') + 1).trim().replace("\"", "");
+            }
+        }
+        return null;
+                
+    }
+    
+    private void addFiles(Part file, String path, HttpServletResponse response) throws IOException{
+        String fileName = getFileName(file); 
 
         OutputStream out = null;
         InputStream filecontent = null;
@@ -107,7 +172,7 @@ public class UploadFile extends HttpServlet {
         try {
             out = new FileOutputStream(new File(path + File.separator
                     + fileName));
-            filecontent = filePart.getInputStream();
+            filecontent = file.getInputStream();
 
             int read = 0;
             byte[] bytes = new byte[1024];
@@ -116,12 +181,8 @@ public class UploadFile extends HttpServlet {
                 out.write(bytes, 0, read);
             }
             
-            //cadastrar no banco
-            String usuario_id = request.getParameter("id_usuario");
-            RSC1_DB rsc1DB  = new RSC1_DB();
             
-            RSC1 rsc1 = rsc1DB.findByUsuarioId(usuario_id);
-            writer.println("New file " + fileName + " created at " + path + " "+ rsc1.getGestao_escolar_1());
+            writer.println("New file " + fileName + " created at " + path);// + " "+ rsc1.getGestao_escolar_1());
            
 
         } catch (FileNotFoundException fne) {
@@ -141,19 +202,7 @@ public class UploadFile extends HttpServlet {
                 writer.close();
             }
         }
-    }
 
-    private String getFileName(Part part) {
-        String partHeader = part.getHeader("content-disposition");
-        
-        for (String content : part.getHeader("content-disposition").split(";")) {
-            if (content.trim().startsWith("filename")) {
-                return content.substring(
-                        content.indexOf('=') + 1).trim().replace("\"", "");
-            }
-        }
-        return null;
-                
     }
 
     /**

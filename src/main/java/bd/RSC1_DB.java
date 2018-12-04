@@ -12,7 +12,7 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import model.RSC1;
-import model.Usuario;
+import model.UploadFileRSC1;
 
 /**
  *
@@ -36,10 +36,23 @@ public class RSC1_DB implements Serializable{
         }
     }
     
-    public RSC1 findByUsuarioId(String usuario_id){
-        String jpql = "SELECT r FROM RSC1 r where r.ID_USUARIO = ?1";
+    public void createFile(UploadFileRSC1 rsc1) {
+        
+        try {
+            em.getTransaction().begin();
+            em.persist(rsc1);
+            em.getTransaction().commit();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
+    }
+    
+    /*public RSC1 findByUsuarioId(Long usuario_id){
+        String jpql = "SELECT r FROM RSC1 r where r.usuario="+usuario_id;
         Query query = em.createQuery(jpql);
-        query.setParameter(1, usuario_id);
+        //query.setParameter(1, usuario_id);
         try {
             RSC1 rsc1 = (RSC1) query.getSingleResult();
 
@@ -47,5 +60,5 @@ public class RSC1_DB implements Serializable{
         } catch (NoResultException e) {
             return null;
         }
-    }
+    }*/
 }
