@@ -14,7 +14,7 @@
     <div class="container-fluid"> 
         <h2>PREENCHA O FORMULÁRIO RSC3:</h2>
         <small style="color:green">${cadastrado}</small>
-        <form action="RSC3" method="POST">
+        <form action="" method="POST">
             <table style="width:100%">
                 <tr>
                     <th>CRITÉRIOS</th>
@@ -23,23 +23,26 @@
                 </tr>
                 <tr>
                     <td>Projeto Ligado à manutenção em equipamentos</td>
-                    <td><input type="number" name="projeto_1" readonly></td>
-                    <td><input type="number" name="projeto_1"></td>
+                    <td><input type="number" name="projeto_1_p" readonly></td>
+                    <td><input type="number" name="projeto_1" value="0"></td>
                 </tr>
                 <tr>
                     <td>Elaboração de documentos técnicos</td>
-                    <td><input type="number" name="projeto_2"  readonly></td>
-                    <td><input type="number" name="projeto_2"> </td>
+                    <td><input type="number" name="projeto_2_p"  readonly></td>
+                    <td><input type="number" name="projeto_2" value="0"> </td>
                 </tr>
                 <tr>
                     <td>Orientacao, tutoria, supervisão ou acompanhamento de atividade de pesqusia ou extensão</td>
-                    <td><input type="number" name="elaboracao_documentos_tecnicos" readonly></td>
-                    <td><input type="number" name="elaboracao_documentos_tecnicos"></td>
+                    <td><input type="number" name="elaboracao_documentos_tecnicos_p" readonly></td>
+                    <td><input type="number" name="elaboracao_documentos_tecnicos" value="0"></td>
 
                 </tr>
             </table>
             <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}"/>">
-            <button type="submit">Cadastrar</button>
+            <button type="submit" id="Cadastrar" class="btn btn-default">Cadastrar</button>
+            <a href="rsc1_ce" class="btn btn-default">RSC1</a>
+            <a href="rsc2_ce" class="btn btn-default">RSC2</a>
+            <a href="rsc3_ce" class="btn btn-default">RSC3</a>  
         </form>
     </div>
 </div>
