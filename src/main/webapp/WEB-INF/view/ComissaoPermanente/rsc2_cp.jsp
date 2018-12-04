@@ -39,8 +39,11 @@
                     <td><input type="file" name="orientacao_tutoria_supervisao_4"></td>
                 </tr>
             </table>
-            <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}"/>">
-            <button type="submit">Cadastrar</button>
+            <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}"/>"><br>
+            <button type="submit" id="Cadastrar" class="btn btn-default">Cadastrar</button>
+            <a href="rsc1_cp" class="btn btn-default">RSC1</a>
+            <a href="rsc2_cp" class="btn btn-default">RSC2</a>
+            <a href="rsc3_cp" class="btn btn-default">RSC3</a>        
         </form>
     </div>
 </div>

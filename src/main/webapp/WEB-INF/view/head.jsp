@@ -34,7 +34,18 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="#">RSCSIS</a>
+                               <c:if test="${usuario.tipo == 'PROFESSOR'}">
+                                
+                                <a class="navbar-brand" href="professor-home">RSCSIS</a>
+                               </c:if>
+                                <c:if test="${usuario.tipo == 'COMISSAOPERMANENTE'}">
+                                   
+                                    <a class="navbar-brand" href="ComissaoPermanente-home">RSCSIS</a>
+                                </c:if>
+                                 <c:if test="${usuario.tipo == 'COMISSAOESPECIAL'}">
+                                   
+                                    <a class="navbar-brand" href="ComissaoEspecial-home">RSCSIS</a>
+                                </c:if>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -55,16 +66,6 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">${usuario.nome}</a>
                                 </li>
-                                <c:if test="${usuario.tipo == 'PROFESSOR'}">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="professor-home">Inicio</a>
-                                </li>
-                                </c:if>
-                                <c:if test="${usuario.tipo == 'COMISSAOPERMANENTE'}">
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="ComissaoPermanente-home">Inicio</a>
-                                    </li>
-                                </c:if>
                                    
                                 <li class="nav-item">
                                     <a class="nav-link" href="LogoutServlet">Sair</a>

@@ -47,7 +47,7 @@ public class BuscarSiapeUSuario extends HttpServlet {
         session.setAttribute("siapeSendoEditado", siape);
         session.setAttribute("SiapeUser", siapeUser);
 
-        RequestDispatcher rd = request.getRequestDispatcher("home_escolher");
+        RequestDispatcher rd = request.getRequestDispatcher("rsc1_cp");
         rd.forward(request, response);
         
     }
