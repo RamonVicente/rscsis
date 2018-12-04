@@ -17,7 +17,7 @@ import org.junit.Test;
  */
 public class TesteRSC3 extends TesteBase{
     
-    @Test
+    /*@Test
     public void t01_inserirRSC3(){
         Usuario user = em.find(Usuario.class, 3L);
         
@@ -31,5 +31,5 @@ public class TesteRSC3 extends TesteBase{
         em.flush();
         
         assertNotNull(rsc3.getId());
-    }
+    }*/
 }

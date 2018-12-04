@@ -47,7 +47,7 @@
                     <td><input type="file" name="atividade_organizacao_social"></td>
                 </tr>
             </table>
-            <input type="hidden" name="id_usuario" value="<c:out value="${usuario.id}" />"><br>
+            <input type="hidden" name="id_usuario" value="<c:out value="${SiapeUser.id}" />"><br>
             <button type="submit" id="Cadastrar" class="btn btn-default">Cadastrar</button>
             <a href="rsc1_cp" class="btn btn-default">RSC1</a>
             <a href="rsc2_cp" class="btn btn-default">RSC2</a>

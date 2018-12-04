@@ -17,7 +17,7 @@ import org.junit.Test;
  */
 public class TesteRSC1 extends TesteBase{
     
-    @Test
+    /*@Test
     public void t01_inserirRSC1(){
         Usuario user = em.find(Usuario.class, 2L);
         
@@ -31,10 +31,10 @@ public class TesteRSC1 extends TesteBase{
         rsc1.setParticipacao_colegiado_conselhos(1);
         rsc1.setUsuario(user);
         
-        em.persist(rsc1);
-        em.flush();
+        //em.persist(rsc1);
+        //em.flush();
         
         assertNotNull(rsc1.getId());
-    }
+    }*/
     
 }

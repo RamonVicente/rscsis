@@ -35,8 +35,8 @@ public class TesteBase {
     public static void setUpClass() {
         //logger.setLevel(Level.INFO);
         logger.setLevel(Level.SEVERE);
-        emf = Persistence.createEntityManagerFactory("rscsis");
-        DbUnitUtil.inserirDados();
+        //emf = Persistence.createEntityManagerFactory("rscsis");
+        //DbUnitUtil.inserirDados();
     }
 
     @AfterClass
